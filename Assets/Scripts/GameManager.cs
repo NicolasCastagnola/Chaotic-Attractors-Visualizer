@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class GameManager : BaseMonoSingleton<GameManager>
 {
-    private List<ChaosAttractorGenerator> _activeGenerators = new List<ChaosAttractorGenerator>();
-
-    [SerializeField] private TMP_Dropdown attractorDropdown;
-
-    private ChaosAttractorType _selectedValue = ChaosAttractorType.None;
+    private const int MaxGeneratorsAllowed = 70;
+    private readonly List<ChaosAttractorGenerator> _activeGenerators = new List<ChaosAttractorGenerator>();
     
     private bool activeTrailLimit;
-    private const int MaxGeneratorsAllowed = 10;
-    
+    private ChaosAttractorType _selectedValue = ChaosAttractorType.None;
+
+    [SerializeField] private TMP_Dropdown attractorDropdown;
     [SerializeField] private ChaosAttractorGenerator generatorPrefab;
 
     protected override void Awake()
