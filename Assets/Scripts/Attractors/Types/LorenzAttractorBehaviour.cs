@@ -8,7 +8,8 @@ public class LorenzAttractorBehaviour : BaseAttractorBehaviour
 
     public override void Initialize(ChaosAttractorGenerator owner)
     {
-        _owner = owner;
+        base.Initialize(owner);
+        
         _position = new Vector3(Random.Range(-20f, 20f), Random.Range(-20f, 20f), Random.Range(-20f, 20f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
@@ -17,11 +18,10 @@ public class LorenzAttractorBehaviour : BaseAttractorBehaviour
         float y_dot = _position.x * (rho - _position.z) - _position.y;
         float z_dot = _position.x * _position.y - (beta/3) * _position.z;
 
-        _position.x += x_dot * GameManager.Instance.GlobalDeltaTime;
-        _position.y += y_dot * GameManager.Instance.GlobalDeltaTime;
-        _position.z += z_dot * GameManager.Instance.GlobalDeltaTime;
+        _position.x += x_dot * 0.01f;
+        _position.y += y_dot * 0.01f;
+        _position.z += z_dot * 0.01f;
 
         return _position;
     }
-    public override void Terminate() => _owner.Terminate();
 }

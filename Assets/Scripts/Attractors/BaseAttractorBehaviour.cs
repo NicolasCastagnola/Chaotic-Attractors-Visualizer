@@ -3,8 +3,8 @@ public abstract class BaseAttractorBehaviour : IChaosAttractor
 {
     protected ChaosAttractorGenerator _owner;
     protected Vector3 _position;
-    
-    public abstract void Initialize(ChaosAttractorGenerator owner);
+
+    public virtual void Initialize(ChaosAttractorGenerator owner) => _owner = owner;
     public abstract Vector3 UpdatedPositionBasedOnFormula();
-    public abstract void Terminate();
+    public virtual void Terminate() => _owner.Terminate();
 }

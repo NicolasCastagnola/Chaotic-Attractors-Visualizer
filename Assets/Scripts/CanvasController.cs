@@ -12,7 +12,6 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject cartesianObject;
 
-    public void Awake() => deltaSpeed.onValueChanged.AddListener(x => GameManager.Instance.GlobalDeltaTime = x);
     public void ToggleCartesian()
     {
         _cartesian = !_cartesian;

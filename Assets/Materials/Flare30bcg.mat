@@ -49,7 +49,7 @@ Material:
     - _Blend2: 1
     - _CullMode: 0
     - _Depthpower: 0.4
-    - _Emission: 13.76
+    - _Emission: 1
     - _Opacity: 1
     - _Usecenterglow: 0
     - _Usecustomrandom: 0

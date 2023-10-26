@@ -1,22 +1,46 @@
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : BaseMonoSingleton<GameManager>
 {
     private List<ChaosAttractorGenerator> _activeGenerators = new List<ChaosAttractorGenerator>();
+
+    [SerializeField] private TMP_Dropdown attractorDropdown;
+
+    private ChaosAttractorType _selectedValue = ChaosAttractorType.None;
     
     private bool activeTrailLimit;
     private const int MaxGeneratorsAllowed = 10;
     
     [SerializeField] private ChaosAttractorGenerator generatorPrefab;
 
-    [Range(0.001f, 0.03f)] public float GlobalDeltaTime = 0.01f;
-
     protected override void Awake()
     {
         base.Awake();
+
+        PopulateDropdownValues();
         
-        SpawnGenerator();
+        attractorDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        
+        attractorDropdown.onValueChanged.RemoveListener(OnDropdownValueChanged);
+    }
+    private void OnDropdownValueChanged(int index) => _selectedValue = (ChaosAttractorType)index;
+    private void PopulateDropdownValues()
+    {
+        attractorDropdown.ClearOptions();
+
+        string[] enumNames = System.Enum.GetNames(typeof(ChaosAttractorType));
+
+        var dropdownOptions = enumNames.Select(enumName => new TMP_Dropdown.OptionData(enumName)).ToList();
+
+        attractorDropdown.AddOptions(dropdownOptions);
     }
     public void ToggleTrailLimit()
     {
@@ -52,8 +76,7 @@ public class GameManager : BaseMonoSingleton<GameManager>
         
         var newGenerator = Instantiate(generatorPrefab).GetComponent<ChaosAttractorGenerator>();
         
-        //TODO
-        newGenerator.Initialize(ChaosAttractorType.Lorenz);
+        newGenerator.Initialize(_selectedValue);
         
         _activeGenerators.Add(newGenerator);
     }
