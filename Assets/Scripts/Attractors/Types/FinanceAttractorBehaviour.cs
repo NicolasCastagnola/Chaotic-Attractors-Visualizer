@@ -9,7 +9,7 @@ internal class FinanceAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(0.1f, 0f, 0f);
+        _position = new Vector3(Random.Range(-0.1f, 0.1f), 0f, 0f);
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

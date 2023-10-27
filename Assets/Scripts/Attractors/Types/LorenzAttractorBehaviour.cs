@@ -9,6 +9,8 @@ public class LorenzAttractorBehaviour : BaseAttractorBehaviour
     public override void Initialize(ChaosAttractorGenerator owner)
     {
         base.Initialize(owner);
+
+        _owner.SetPivot(new Vector3(0,0,30f));
         
         _position = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
     }

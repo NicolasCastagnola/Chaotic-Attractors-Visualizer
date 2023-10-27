@@ -7,7 +7,8 @@ internal class NoseHooverAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(1, 0, 0);
+        // _position = new Vector3(1, 0, 0);
+        _position = new Vector3(Random.Range(-1f, 1f), 0, 0);
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-internal class _3CellsCNNAttractorBehaviour : BaseAttractorBehaviour
+internal class ThreeCellsCNNAttractorBehaviour : BaseAttractorBehaviour
 {
     private const float p1 = 1.24f;
     private const float p2 = 1.1f;
@@ -9,7 +9,8 @@ internal class _3CellsCNNAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(0.1f, 0.1f, 0.1f);
+        // _position = new Vector3(0.1f, 0.1f, 0.1f);
+        _position = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

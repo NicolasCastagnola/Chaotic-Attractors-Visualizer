@@ -9,7 +9,9 @@ internal class ChenLeeAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(1, 0, 4.5f);
+        // _position = new Vector3(1, 0, 4.5f);
+        _position = new Vector3(Random.Range(0f, 1f), 0, Random.Range(3, 4.5f));
+
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

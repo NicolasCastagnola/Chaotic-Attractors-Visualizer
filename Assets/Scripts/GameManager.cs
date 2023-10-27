@@ -8,12 +8,16 @@ public class GameManager : BaseMonoSingleton<GameManager>
     private const int MaxGeneratorsAllowed = 70;
     private readonly List<ChaosAttractorGenerator> _activeGenerators = new List<ChaosAttractorGenerator>();
     
+    private Material currentMaterial;
     private bool activeTrailLimit;
     private ChaosAttractorType _selectedValue = ChaosAttractorType.None;
 
     [SerializeField] private TMP_Dropdown attractorDropdown;
+    [SerializeField] private Material[] possiblesMaterials;
     [SerializeField] private ChaosAttractorGenerator generatorPrefab;
 
+    public Transform Pivot;
+    public Transform Camera;
     protected override void Awake()
     {
         base.Awake();
@@ -21,6 +25,8 @@ public class GameManager : BaseMonoSingleton<GameManager>
         PopulateDropdownValues();
         
         attractorDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
+        
+        currentMaterial = possiblesMaterials[Random.Range(0, possiblesMaterials.Length)];
     }
 
     protected override void OnDestroy()
@@ -61,6 +67,15 @@ public class GameManager : BaseMonoSingleton<GameManager>
         
         ClearAllTrails();
     }
+    public void RandomizeMaterial()
+    {
+        currentMaterial = possiblesMaterials[Random.Range(0, possiblesMaterials.Length)];
+
+        foreach (var generator in _activeGenerators)
+        {
+            generator.SetTrailMaterial(currentMaterial);
+        }
+    }
     public void ClearAllTrails()
     {
         foreach (var activeGenerator in _activeGenerators)
@@ -75,6 +90,7 @@ public class GameManager : BaseMonoSingleton<GameManager>
         var newGenerator = Instantiate(generatorPrefab).GetComponent<ChaosAttractorGenerator>();
         
         newGenerator.Initialize(_selectedValue);
+        newGenerator.SetTrailMaterial(currentMaterial);
         
         _activeGenerators.Add(newGenerator);
     }
@@ -82,6 +98,11 @@ public class GameManager : BaseMonoSingleton<GameManager>
     {
         foreach (var activeGenerator in _activeGenerators)
         {
+            if (activeGenerator == null)
+            {
+                _activeGenerators.RemoveAt(_activeGenerators.IndexOf(activeGenerator));
+            }
+            
             activeGenerator.Terminate();
         }
         
