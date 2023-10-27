@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class GameManager : BaseMonoSingleton<GameManager>
 {
-    private const int MaxGeneratorsAllowed = 70;
     private readonly List<ChaosAttractorGenerator> _activeGenerators = new List<ChaosAttractorGenerator>();
     
     private Material currentMaterial;
     private bool activeTrailLimit;
     private ChaosAttractorType _selectedValue = ChaosAttractorType.None;
 
-    [SerializeField] private TMP_Dropdown attractorDropdown;
+    [SerializeField, Header("MAX ATTRACTOR ALLOWED IN SCENE"), Range(20, 500)] private int MaxGeneratorsAllowed;
+    [SerializeField,Space(30)] private TMP_Dropdown attractorDropdown;
     [SerializeField] private Material[] possiblesMaterials;
     [SerializeField] private ChaosAttractorGenerator generatorPrefab;
 
