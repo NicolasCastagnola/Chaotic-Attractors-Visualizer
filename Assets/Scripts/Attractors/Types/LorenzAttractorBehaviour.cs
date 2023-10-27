@@ -10,7 +10,7 @@ public class LorenzAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(Random.Range(-20f, 20f), Random.Range(-20f, 20f), Random.Range(-20f, 20f));
+        _position = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {
