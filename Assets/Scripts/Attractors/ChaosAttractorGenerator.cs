@@ -67,25 +67,35 @@ public class ChaosAttractorGenerator : MonoBehaviour
     public void SetTrailMaterial(Material currentMaterial) => attachedTrailRender.material = currentMaterial;
 }
 
-// private const float a = 36f;
-// private const float b = 3f;
-// private const float c = 20f;
-//     
-// public override void Initialize(ChaosAttractorGenerator owner)
-// {
-//     base.Initialize(owner);
-//         
-//     _position = new Vector3(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
-// }
-// public override Vector3 UpdatedPositionBasedOnFormula()
-// {
-//     float x_dot = ;
-//     float y_dot = ;
-//     float z_dot = ;
-//                                                                             
-//     _position.x += x_dot * 0.002f;
-//     _position.y += y_dot * 0.002f;
-//     _position.z += z_dot * 0.002f;
-//         
-//     return _position;
-// }
+
+/* COPY PASTE THIS CODE AFTER CREATE THE NEW ATTRACTOR CLASS AND MAKE IT INHERIT FROM BaseAttractorBehaviour.cs
+
+//1) Replace variables a,b,c..
+//2) Replace x_dot, y_dot and z_dot to the attractor formula
+//3) Replace the delta to the attractor delta constant.
+
+private const float a = 0f;
+private const float b = 0f;
+private const float c = 0f;
+private const float delta = 0;
+    
+public override void Initialize(ChaosAttractorGenerator owner)
+{
+    base.Initialize(owner);
+        
+     //Replace to random values or constant starting point
+    _position = new Vector3(0,0,0);
+}
+public override Vector3 UpdatedPositionBasedOnFormula()
+{
+    float x_dot = 0;
+    float y_dot = 0;
+    float z_dot = 0;
+                                                                            
+    _position.x += x_dot * delta;
+    _position.y += y_dot * delta;
+    _position.z += z_dot * delta;
+        
+    return _position;
+}
+*/
