@@ -8,7 +8,7 @@ internal class BoualiAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
-        _position = new Vector3(1f, 0.1f, 0.1f);
+        _position = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 0.1f), Random.Range(0f, 0.1f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

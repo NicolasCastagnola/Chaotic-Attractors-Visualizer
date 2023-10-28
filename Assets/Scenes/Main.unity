@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setInactiveOnStart: 0
   dontDestroyOnLoad: 0
-  MaxGeneratorsAllowed: 121
+  MaxGeneratorsAllowed: 100
   attractorDropdown: {fileID: 138056404}
   possiblesMaterials:
   - {fileID: 2100000, guid: 6527cb22ac047e141897b4ac1466e356, type: 2}
