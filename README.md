@@ -1,4 +1,6 @@
-# Description: Dive headfirst into the mesmerizing world of Chaos Attractors, a mind-bending project that challenges your perceptions of order and chaos. In this unique and immersive experience, chaos is not a hindrance but an art form waiting to be explored.
+ ![Capture](https://github.com/NicolasCastagnola/Chaotic-Attractors-Visualizer/assets/49046616/416ee460-6f23-4b99-86c8-7020f5e3c658)
+
+ - Description: Dive headfirst into the mesmerizing world of Chaos Attractors, a mind-bending project that challenges your perceptions of order and chaos. In this unique and immersive experience, chaos is not a hindrance but an art form waiting to be explored.
 
 🌀 What is Chaos Attractors? Chaos Attractors is an experimental project that pushes the boundaries of creativity, mathematics, and art. Explore an ever-evolving digital landscape where the rules are constantly shifting, creating a captivating interplay between order and chaos.
 
