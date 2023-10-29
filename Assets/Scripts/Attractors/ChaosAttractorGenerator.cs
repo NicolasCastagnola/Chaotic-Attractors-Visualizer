@@ -17,7 +17,7 @@ public enum ChaosAttractorType
     Arneodo,
     BurkeShaw,
     ChenCelikovsky,
-    DequanLi 
+    // DequanLi 
 }
 
 public class ChaosAttractorGenerator : MonoBehaviour
@@ -53,7 +53,7 @@ public class ChaosAttractorGenerator : MonoBehaviour
             ChaosAttractorType.Arneodo => new ArneodoAttractorBehaviour(),
             ChaosAttractorType.BurkeShaw => new BurkeShawAttractorBehaviour(),
             ChaosAttractorType.ChenCelikovsky => new ChenCelikovskyAttractorBehaviour(),
-            ChaosAttractorType.DequanLi => new DequanLiAttractorBehaviour(),
+            // ChaosAttractorType.DequanLi => new DequanLiAttractorBehaviour(), TODO: fix infinite 
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
     }

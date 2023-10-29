@@ -8,6 +8,8 @@ internal class BoualiAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
+            
+        _owner.SetPivot(new Vector3(0.85f,4.76f,1.09f));
         _position = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 0.1f), Random.Range(0f, 0.1f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()

@@ -12,6 +12,7 @@ public class AizawaAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
+        _owner.SetPivot(new Vector3(0,0,0.5f));
         _position = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()

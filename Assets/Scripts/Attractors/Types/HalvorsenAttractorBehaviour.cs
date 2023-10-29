@@ -4,9 +4,10 @@ internal class HalvorsenAttractorBehaviour : BaseAttractorBehaviour
     private const float a = 1.4f;
     public override void Initialize(ChaosAttractorGenerator owner)
     {
-        _position = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-
         base.Initialize(owner);
+        
+        _owner.SetPivot(new Vector3(-4.82999992f, -3.82999992f, -3.50999999f));
+        _position = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
     {

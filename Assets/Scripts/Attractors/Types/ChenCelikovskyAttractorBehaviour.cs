@@ -9,6 +9,7 @@ internal class ChenCelikovskyAttractorBehaviour : BaseAttractorBehaviour
     {
         base.Initialize(owner);
         
+        _owner.SetPivot(new Vector3(0,0,20f));
         _position = new Vector3(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
     }
     public override Vector3 UpdatedPositionBasedOnFormula()
