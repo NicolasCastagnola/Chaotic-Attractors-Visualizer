@@ -10,3 +10,5 @@
 🕹️ Interactive Gameplay: Engage with the chaotic elements and watch as they respond to your inputs, creating a dynamic connection between you and the digital realm.
 
 🔮 Chaos as Art: Chaos Attractors reimagines the concept of chaos as a canvas, where you are both the artist and the observer.
+
+- Refs: http://www.3d-meier.de/tut19/Seite0.html
