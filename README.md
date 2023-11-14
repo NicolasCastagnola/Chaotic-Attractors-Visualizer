@@ -1,3 +1,4 @@
+<h1 align="center">Chaos Attractor</h1>
 
 ![Capture](https://github.com/NicolasCastagnola/Chaotic-Attractors-Visualizer/assets/49046616/2a7cceb3-f52d-4cf1-be35-80acf4193b08)
 
